@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="ca">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apunts Web - JS / DOM</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+
+    <header class="hero">
+      <h1>APUNTS EXAMEN JS / DOM</h1>
+      <p>Resum visual amb exemples pràctics de JavaScript, DOM i joc de les fruites.</p>
+    </header>
+
+    <main class="contenidor">
+
+      <section class="tema">
+        <h2>1. JS BÀSIC</h2>
+        <p class="resum">Variables, console.log, operacions i template strings.</p>
+
+        <div class="apunt">
+          <h3>Variables</h3>
+          <pre><code>let nom = "Uri";
+const edat = 20;
+let ciutat;
+ciutat = "Barcelona";</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Console</h3>
+          <pre><code>console.log("Hola món");</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Operacions</h3>
+          <pre><code>let num = 5;
+console.log(num * 2);</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Template String</h3>
+          <pre><code>let nomJugador = "Heroi";
+console.log(`Hola ${nomJugador}`);</code></pre>
+        </div>
+
+        <button id="btn-basic">Provar console</button>
+        <p id="sortida-basic" class="sortida"></p>
+      </section>
+
+      <section class="tema">
+        <h2>2. ARRAYS</h2>
+        <p class="resum">push, includes, recorregut amb for i accés a elements.</p>
+
+        <div class="apunt">
+          <h3>Array bàsic</h3>
+          <pre><code>let inventari = ["espasa", "escut", "poció"];</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>push()</h3>
+          <pre><code>inventari.push("arc");</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>includes()</h3>
+          <pre><code>inventari.includes("poció"); // true</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>for amb array</h3>
+          <pre><code>for (let i = 0; i < inventari.length; i++) {
+  console.log(inventari[i]);
+}</code></pre>
+        </div>
+
+        <button id="btn-array">Provar array</button>
+        <p id="sortida-array" class="sortida"></p>
+      </section>
+
+      <section class="tema">
+        <h2>3. MÀXIM / MÍNIM</h2>
+        <p class="resum">Math.max, Math.min i funcions pròpies.</p>
+
+        <div class="apunt">
+          <h3>Amb array</h3>
+          <pre><code>let nums = [10, 50, 30];
+Math.max(...nums);
+Math.min(...nums);</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Funció màxim</h3>
+          <pre><code>function maxim(a, b) {
+  if (a > b) {
+    return a;
+  } else {
+    return b;
+  }
+}</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Funció mínim</h3>
+          <pre><code>function minim(a, b) {
+  if (a < b) {
+    return a;
+  } else {
+    return b;
+  }
+}</code></pre>
+        </div>
+
+        <button id="btn-max">Calcular</button>
+        <p id="sortida-max" class="sortida"></p>
+      </section>
+
+      <section class="tema">
+        <h2>4. CONDICIONS I SWITCH</h2>
+        <p class="resum">if / else, booleans i switch.</p>
+
+        <div class="apunt">
+          <h3>if / else</h3>
+          <pre><code>let vida = 15;
+
+if (vida < 20) {
+  console.log("Vida crítica!");
+} else {
+  console.log("Vida correcta");
+}</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Boolean</h3>
+          <pre><code>let teClau = true;
+
+if (teClau) {
+  console.log("Cofre obert");
+} else {
+  console.log("Necessites una clau");
+}</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>switch</h3>
+          <pre><code>let operacio = "+";
+
+switch (operacio) {
+  case "+":
+    console.log(2 + 2);
+    break;
+  default:
+    console.log("Error");
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="tema">
+        <h2>5. BUCLES I FUNCIONS</h2>
+        <p class="resum">for, funcions amb paràmetres i return.</p>
+
+        <div class="apunt">
+          <h3>Bucle for</h3>
+          <pre><code>for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Funció simple</h3>
+          <pre><code>function saludarJugador(nom) {
+  console.log(`Benvingut ${nom}!`);
+}</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Funció amb return</h3>
+          <pre><code>function calcularDany(atac, defensa) {
+  return atac - defensa;
+}</code></pre>
+        </div>
+      </section>
+
+      <section class="tema">
+        <h2>6. DOM - TEXT</h2>
+        <p class="resum">getElementById, querySelector i textContent.</p>
+
+        <div class="apunt">
+          <h3>Seleccionar per ID</h3>
+          <pre><code>document.getElementById("missatge")</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Canviar text</h3>
+          <pre><code>document.getElementById("missatge").textContent = "Nou nivell!";</code></pre>
+        </div>
+
+        <p id="missatge" class="caixa-text">Text inicial</p>
+        <button id="btn-text">Canviar text</button>
+      </section>
+
+      <section class="tema">
+        <h2>7. CLASSLIST</h2>
+        <p class="resum">Afegir i eliminar classes CSS.</p>
+
+        <div class="apunt">
+          <h3>Afegir classe</h3>
+          <pre><code>element.classList.add("destacat");</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Treure classe</h3>
+          <pre><code>element.classList.remove("destacat");</code></pre>
+        </div>
+
+        <p id="text2" class="caixa-text">Text destacable</p>
+        <button id="afegir">Afegir classe</button>
+        <button id="treure">Treure classe</button>
+      </section>
+
+      <section class="tema">
+        <h2>8. CREAR ELEMENTS</h2>
+        <p class="resum">createElement, textContent i append.</p>
+
+        <div class="apunt">
+          <h3>Exemple</h3>
+          <pre><code>let p = document.createElement("p");
+p.textContent = "Nou enemic";
+document.getElementById("pantalla").append(p);</code></pre>
+        </div>
+
+        <button id="crear">Afegir enemic</button>
+        <section id="pantalla" class="pantalla"></section>
+      </section>
+
+      <section class="tema">
+        <h2>9. EVENTS</h2>
+        <p class="resum">click, mouseover, mouseout i keydown.</p>
+
+        <div class="apunt">
+          <h3>click</h3>
+          <pre><code>btn.addEventListener("click", function() {
+  console.log("Has clicat!");
+});</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>mouseover / mouseout</h3>
+          <pre><code>quad.addEventListener("mouseover", function() {
+  quad.style.background = "yellow";
+});
+
+quad.addEventListener("mouseout", function() {
+  quad.style.background = "blue";
+});</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>keydown</h3>
+          <pre><code>document.addEventListener("keydown", function(event) {
+  console.log(event.key);
+});</code></pre>
+        </div>
+
+        <div id="quadrat"></div>
+        <p id="tecla" class="sortida">Prem una tecla...</p>
+      </section>
+
+      <section class="tema">
+        <h2>10. SELECTOR DE PERSONATGE</h2>
+        <p class="resum">Variables, càlcul de totals i comparació de stats.</p>
+
+        <div class="graella-personatges">
+          <article class="personatge">
+            <h3>GUERRER</h3>
+            <p>Atac: <span id="atac-guerrer"></span></p>
+            <p>Defensa: <span id="defensa-guerrer"></span></p>
+            <p>Velocitat: <span id="velocitat-guerrer"></span></p>
+            <p>Màgia: <span id="magia-guerrer"></span></p>
+            <p>Total: <span id="total-guerrer"></span></p>
+          </article>
+
+          <article class="personatge">
+            <h3>MAG</h3>
+            <p>Atac: <span id="atac-mag"></span></p>
+            <p>Defensa: <span id="defensa-mag"></span></p>
+            <p>Velocitat: <span id="velocitat-mag"></span></p>
+            <p>Màgia: <span id="magia-mag"></span></p>
+            <p>Total: <span id="total-mag"></span></p>
+          </article>
+
+          <article class="personatge">
+            <h3>ARQUER</h3>
+            <p>Atac: <span id="atac-arquer"></span></p>
+            <p>Defensa: <span id="defensa-arquer"></span></p>
+            <p>Velocitat: <span id="velocitat-arquer"></span></p>
+            <p>Màgia: <span id="magia-arquer"></span></p>
+            <p>Total: <span id="total-arquer"></span></p>
+          </article>
+
+          <article class="personatge">
+            <h3>ASSASSÍ</h3>
+            <p>Atac: <span id="atac-assassi"></span></p>
+            <p>Defensa: <span id="defensa-assassi"></span></p>
+            <p>Velocitat: <span id="velocitat-assassi"></span></p>
+            <p>Màgia: <span id="magia-assassi"></span></p>
+            <p>Total: <span id="total-assassi"></span></p>
+          </article>
+        </div>
+
+        <div class="resultats">
+          <p>Millor atac: <strong id="millor-atac"></strong> (<span id="valor-atac"></span>)</p>
+          <p>Millor defensa: <strong id="millor-defensa"></strong> (<span
+              id="valor-defensa"></span>)</p>
+          <p>Millor velocitat: <strong id="millor-velocitat"></strong> (<span
+              id="valor-velocitat"></span>)</p>
+          <p>Millor màgia: <strong id="millor-magia"></strong> (<span id="valor-magia"></span>)</p>
+        </div>
+      </section>
+
+      <section class="tema">
+        <h2>11. FRUITES</h2>
+        <p class="resum">createElement, classList, append, addEventListener, funció random i posició
+          aleatòria.</p>
+
+        <div class="apunt">
+          <h3>Funció random</h3>
+          <pre><code>function generarAleatori(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Crear fruita</h3>
+          <pre><code>let f = document.createElement("div");
+f.classList.add("fruita");
+f.textContent = "🍎";</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Posició aleatòria</h3>
+          <pre><code>let posX = generarAleatori(0, zonaJoc.clientWidth - 60);
+let posY = generarAleatori(0, zonaJoc.clientHeight - 60);
+
+f.style.left = posX + "px";
+f.style.top = posY + "px";</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Click per sumar punts</h3>
+          <pre><code>f.addEventListener("click", function() {
+  f.remove();
+  punts += 10;
+  divPunts.textContent = punts;
+});</code></pre>
+        </div>
+
+        <button id="btn-iniciar">Iniciar joc</button>
+        <p class="puntuacio">Punts: <span id="punts">0</span></p>
+        <section id="zona-joc" class="zona-joc"></section>
+      </section>
+
+      <section class="tema">
+        <h2>12. DOM MANIPULATION</h2>
+        <p class="resum">Selecció d’elements, modificació de contingut, atributs, estils, crear i
+          eliminar elements.</p>
+
+        <div class="apunt">
+          <h3>Seleccionar elements</h3>
+          <pre><code>let title = document.getElementById("title");
+let mainDiv = document.querySelector(".main-div");
+let listItems = document.querySelectorAll("ul.list > li");</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Modificar contingut</h3>
+          <pre><code>title.innerText = "Manipulando el DOM";
+title.innerHTML = "&lt;strong&gt;Nuevo&lt;/strong&gt; título";</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Modificar atributs i classes</h3>
+          <pre><code>image.setAttribute("src", "public/bun-logo.svg");
+image.classList.add("img-responsive");</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Modificar estils</h3>
+          <pre><code>mainDiv.style.backgroundColor = "#ffcc00";</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Crear i eliminar elements</h3>
+          <pre><code>let newDiv = document.createElement("div");
+newDiv.innerText = "Soy un div nuevo";
+document.body.appendChild(newDiv);
+
+let oldDiv = document.querySelector(".old-div");
+if (oldDiv) oldDiv.remove();</code></pre>
+        </div>
+
+        <section class="demo-dom main-div">
+          <h3 id="title">Títol inicial</h3>
+          <img id="img" src="1.png" alt="Logo">
+          <p class="old-div">Aquest element es pot eliminar</p>
+          <button id="main-button">Provar events DOM</button>
+        </section>
+      </section>
+
+      <section class="tema">
+        <h2>13. LLISTA DINÀMICA, FILTRE I DRAG & DROP</h2>
+        <p class="resum">Afegir elements a una llista, filtrar contingut i moure elements amb drag
+          and drop.</p>
+
+        <div class="apunt">
+          <h3>Llista dinàmica</h3>
+          <pre><code>let input = document.getElementById("item-input");
+let addButton = document.getElementById("add-button");
+let list = document.getElementById("dynamic-list");
+
+addButton.addEventListener("click", function () {
+  if (input.value.trim() !== "") {
+    let newItem = document.createElement("li");
+    newItem.innerText = input.value;
+    list.appendChild(newItem);
+    input.value = "";
+  }
+});</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Filtre</h3>
+          <pre><code>filterInput.addEventListener("keyup", function () {
+  const term = filterInput.value.toLowerCase();
+  const items = itemsList.getElementsByTagName("li");
+
+  Array.from(items).forEach(function (item) {
+    item.style.display =
+      item.textContent.toLowerCase().includes(term)
+        ? "block"
+        : "none";
+  });
+});</code></pre>
+        </div>
+
+        <div class="apunt">
+          <h3>Drag & Drop</h3>
+          <pre><code>draggable.addEventListener("dragstart", function () {
+  setTimeout(() => {
+    this.style.display = "none";
+  }, 0);
+});
+
+dropzone.addEventListener("dragover", function (e) {
+  e.preventDefault();
+});
+
+dropzone.addEventListener("drop", function () {
+  draggable.style.display = "block";
+  this.append(draggable);
+});</code></pre>
+        </div>
+
+        <section class="demo-bloc">
+          <h3>Llista dinàmica</h3>
+          <input type="text" id="item-input" placeholder="Escriu un element">
+          <button id="add-button">Afegir</button>
+          <ul id="dynamic-list">
+            <li>Espasa</li>
+            <li>Escut</li>
+          </ul>
+        </section>
+
+        <section class="demo-bloc">
+          <h3>Filtrar llista</h3>
+          <input type="text" id="filter-input" placeholder="Filtrar elements">
+          <ul id="items-list">
+            <li>Poció</li>
+            <li>Daga</li>
+            <li>Arc</li>
+            <li>Martell</li>
+          </ul>
+        </section>
+
+        <section class="demo-bloc">
+          <h3>Drag & Drop</h3>
+          <div id="draggable" draggable="true">Arrossega'm</div>
+          <div id="dropzone">Deixa-ho aquí</div>
+        </section>
+      </section>
+
+      <section class="tema">
+        <h2>14. SISTEMA DE COMBAT INTERACTIU</h2>
+        <p class="resum">Exemple d'esdeveniments amb atac, poció, barres de vida, torns i
+          animacions.</p>
+
+        <section class="demo-bloc">
+          <h3>Camp de Batalla</h3>
+
+          <div class="combat-wrapper">
+            <div class="camp-batalla-combat" id="camp-batalla-combat">
+              <!-- missatges combat -->
+              <div class="combat-missatge" id="combat-missatge">🔥 Combat preparat!</div>
+
+              <!-- JUGADOR -->
+              <div class="combatent jugador-container">
+                <div class="combatent-info">
+                  <div class="combatent-nom">messmer</div>
+
+                  <div class="combatent-sprite jugador-sprite">
+                    <img id="combat-img-jugador" src="3.png" alt="messmer">
+                  </div>
+
+                  <div class="combatent-stats">
+                    <div class="vida-container">
+                      <div class="stat-label">Vida:</div>
+                      <div class="vida-barra">
+                        <div class="vida-actual" id="combat-vida-jugador-barra"></div>
+                      </div>
+                      <div class="vida-text">
+                        <span id="combat-vida-jugador">100</span> / 100
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="combatent-stats">
+                    <div class="stat-label">Atac:</div>
+                    <div class="stat-valor" id="combat-atac-jugador">25</div>
+
+                    <div class="stat-label">Pocions:</div>
+                    <div class="stat-valor" id="combat-pocions-jugador">3</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- ENEMIC -->
+              <div class="combatent enemic-container">
+                <div class="combatent-info">
+                  <div class="combatent-nom" id="combat-enemic-nom"> Godrick</div>
+
+                  <div class="combatent-sprite enemic-sprite">
+                    <img id="combat-img-enemic" src="2.png" alt="2.png">
+                  </div>
+
+                  <div class="combatent-stats">
+                    <div class="vida-container">
+                      <div class="stat-label">Vida:</div>
+                      <div class="vida-barra enemic">
+                        <div class="vida-actual enemic" id="combat-vida-enemic-barra"></div>
+                      </div>
+                      <div class="vida-text">
+                        <span id="combat-vida-enemic">120</span> /
+                        <span id="combat-vida-enemic-max">120</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="combatent-stats">
+                    <div class="stat-label">Atac:</div>
+                    <div class="stat-valor" id="combat-atac-enemic">20</div>
+
+                    <div class="stat-label">Pocions:</div>
+                    <div class="stat-valor" id="combat-pocions-enemic">3</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="demo-bloc">
+          <h3>Controls de Combat</h3>
+
+          <div class="controls-grid">
+            <button class="btn-control atacar" id="combat-btn-atacar">
+              <span class="btn-icon">⚔️</span>
+              <span class="btn-text">ATACAR</span>
+              <span class="btn-info">Causa 25-30 de dany</span>
+            </button>
+
+            <button class="btn-control pocio" id="combat-btn-pocio">
+              <span class="btn-icon">🧪</span>
+              <span class="btn-text">POCIÓ</span>
+              <span class="btn-info">Recupera 40 HP</span>
+            </button>
+
+            <button class="btn-control reiniciar" id="combat-btn-reiniciar">
+              <span class="btn-icon">🔄</span>
+              <span class="btn-text">REINICIAR</span>
+              <span class="btn-info">Torna a començar</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="demo-bloc">
+          <h3>Estadístiques de la Batalla</h3>
+
+          <div class="stats-batalla-grid">
+            <div class="stat-batalla">
+              <div class="stat-batalla-label">Torns</div>
+              <div class="stat-batalla-valor" id="combat-torns-total">0</div>
+            </div>
+
+            <div class="stat-batalla">
+              <div class="stat-batalla-label">Dany causat</div>
+              <div class="stat-batalla-valor" id="combat-dany-causat">0</div>
+            </div>
+
+            <div class="stat-batalla">
+              <div class="stat-batalla-label">Dany rebut</div>
+              <div class="stat-batalla-valor" id="combat-dany-rebut">0</div>
+            </div>
+
+            <div class="stat-batalla">
+              <div class="stat-batalla-label">Pocions usades</div>
+              <div class="stat-batalla-valor" id="combat-pocions-utilitzades">0</div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+    </main>
+
+    <footer class="peu-pagina">
+      <p>&copy; 2026 Oriol Carballo López. Tots els drets reservats.</p>
+    </footer>
+
+    <script src="index.js"></script>
+  </body>
+</html>
